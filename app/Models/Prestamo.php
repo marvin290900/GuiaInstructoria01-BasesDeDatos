@@ -9,8 +9,8 @@ class Prestamo extends Model
 {
     use HasFactory;
 
-    protected $table = 'prestamos';
-    protected $primaryKey = 'id_prestamos';
+    protected $table = 'Prestamos';
+    public $timestamps = false;
 
     protected $fillable = [
         'id_usuario',
@@ -25,6 +25,6 @@ class Prestamo extends Model
 
     public function libros()
     {
-        return $this->belongsToMany(Libro::class, 'detalle_prestamos', 'id_prestamos', 'id_libro');
+        return $this->belongsToMany(Libro::class, 'Detalle_Prestamo', 'id_prestamo', 'id_libro');
     }
 }

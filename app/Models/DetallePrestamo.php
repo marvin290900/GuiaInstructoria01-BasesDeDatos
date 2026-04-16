@@ -9,6 +9,7 @@ class DetallePrestamo extends Model
 {
     use HasFactory;
 
-    protected $table = 'detalle_prestamos';
-    protected $fillable = ['id_prestamos', 'id_libro'];
+    protected $table = 'Detalle_Prestamo';
+    public $timestamps = false;
+    protected $fillable = ['id_prestamo', 'id_libro'];
 }

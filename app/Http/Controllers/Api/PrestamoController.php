@@ -16,11 +16,11 @@ class PrestamoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_usuario' => 'required|exists:users,id',
+            'id_usuario' => 'required|exists:Usuarios,id',
             'fecha_prestamo' => 'required|date',
             'fecha_devolucion' => 'required|date',
             'libros' => 'nullable|array',
-            'libros.*' => 'exists:libros,id'
+            'libros.*' => 'exists:Libros,id'
         ]);
 
         $prestamo = Prestamo::create($request->except('libros'));

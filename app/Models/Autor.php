@@ -9,7 +9,8 @@ class Autor extends Model
 {
     use HasFactory;
 
-    protected $table = 'autores';
+    protected $table = 'Autores';
+    public $timestamps = false;
     protected $fillable = ['nombre'];
 
     public function libros()
@@ -17,3 +18,4 @@ class Autor extends Model
         return $this->belongsToMany(Libro::class, 'libro_autor', 'id_autor', 'id_libro');
     }
 }
+

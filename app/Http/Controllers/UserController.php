@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $data = $request->validate([
             'nombre'   => 'required|string|max:255',
-            'email'    => 'required|string|email|max:255|unique:users',
+            'email'    => 'required|string|email|max:255|unique:Usuarios',
             'telefono' => 'required|string|max:255',
         ]);
         
@@ -37,7 +37,7 @@ class UserController extends Controller
     {
         $data = $request->validate([
             'nombre'   => 'sometimes|required|string|max:255',
-            'email'    => 'sometimes|required|string|email|max:255|unique:users,email,'.$user->id,
+            'email'    => 'sometimes|required|string|email|max:255|unique:Usuarios,email,'.$user->id,
             'telefono' => 'sometimes|required|string|max:255',
         ]);
 

@@ -9,9 +9,10 @@ class Libro extends Model
 {
     use HasFactory;
 
-    protected $table = 'libros';
+    protected $table = 'Libros';
+    public $timestamps = false;
 
-    protected $fillable = ['titulo', 'anio_publicacion', 'id_categoria'];
+    protected $fillable = ['titulo', 'año_publicacion', 'id_categoria'];
 
     public function categoria()
     {
@@ -20,16 +21,11 @@ class Libro extends Model
 
     public function autores()
     {
-        return $this->belongsToMany(Autor::class, 'libro_autor', 'id_libro', 'id_autor');
+        return $this->belongsToMany(Autor::class, 'Libro_Autor', 'id_libro', 'id_autor');
     }
 
     public function prestamos()
     {
-        return $this->belongsToMany(
-            Prestamo::class,
-            'detalle_prestamos',
-            'id_libro',
-            'id_prestamos'
-        );
+        return $this->belongsToMany(Prestamo::class, 'Detalle_Prestamo', 'id_libro', 'id_prestamo');
     }
 }

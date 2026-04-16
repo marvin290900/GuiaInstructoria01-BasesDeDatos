@@ -9,7 +9,8 @@ class Categoria extends Model
 {
     use HasFactory;
 
-    protected $table = 'categorias';
+    protected $table = 'Categoria';
+    public $timestamps = false;
     protected $fillable = ['nombre'];
 
     public function libros()
