@@ -26,6 +26,7 @@ composer install
 ```bash
 cp .env.example .env
 php artisan key:generate
+php artisan jwt:secret
 ```
 
 4. **Database migration**
