@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\LibroController;
 use App\Http\Controllers\Api\PrestamoController;
 
 
-Route::prefix('users')->group(function () {
+Route::prefix('usuarios')->group(function () {
     Route::get('/', [UserController::class, 'index']);
     Route::get('/{user}', [UserController::class, 'show']);
     Route::post('/', [UserController::class, 'store']);
