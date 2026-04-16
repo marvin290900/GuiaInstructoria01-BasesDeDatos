@@ -13,9 +13,9 @@ class User extends Authenticatable implements JWTSubject
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'nombre',
         'email',
+        'telefono',
         'password',
     ];
 
@@ -45,5 +45,10 @@ class User extends Authenticatable implements JWTSubject
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function prestamos(): HasMany
+    {
+        return $this->hasMany(Prestamo::class, 'id_usuario');
     }
 }

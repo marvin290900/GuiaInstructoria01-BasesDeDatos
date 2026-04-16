@@ -20,23 +20,25 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name'     => 'required|string|max:255',
+            'nombre'   => 'required|string|max:255',
             'email'    => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
+            'telefono' => 'required|string|max:255',
         ]);
+        
+        // Auto-assign a default password so the user doesn't need to specify it for testing
+        $data['password'] = bcrypt('password');
 
         $user = User::create($data);
 
         return response()->json($user, 201);
-
     }
 
     public function update(Request $request, User $user)
     {
         $data = $request->validate([
-            'name'     => 'sometimes|required|string|max:255',
+            'nombre'   => 'sometimes|required|string|max:255',
             'email'    => 'sometimes|required|string|email|max:255|unique:users,email,'.$user->id,
-            'password' => 'sometimes|required|string|min:8',
+            'telefono' => 'sometimes|required|string|max:255',
         ]);
 
         $user->update($data);
