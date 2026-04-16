@@ -16,6 +16,7 @@ return new class extends Migration {
 
             $table->foreign('id_libro')->references('id')->on('Libros');
             $table->foreign('id_autor')->references('id')->on('Autores');
+            $table->timestamps();
         });
     }
 

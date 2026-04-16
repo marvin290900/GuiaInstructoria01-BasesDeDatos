@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->foreignId('id_usuario')->constrained('Usuarios');
             $table->date('fecha_prestamo');
             $table->date('fecha_devolucion');
+            $table->timestamps();
         });
     }
 

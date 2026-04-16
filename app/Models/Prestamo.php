@@ -10,7 +10,6 @@ class Prestamo extends Model
     use HasFactory;
 
     protected $table = 'Prestamos';
-    public $timestamps = false;
 
     protected $fillable = [
         'id_usuario',

@@ -12,17 +12,18 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
-    public $timestamps = false;
     protected $table = 'Usuarios';
 
     protected $fillable = [
         'nombre',
         'email',
         'telefono',
+        'password',
     ];
 
     protected $hidden = [
         'password',
+        'remember_token',
     ];
 
     protected function casts(): array

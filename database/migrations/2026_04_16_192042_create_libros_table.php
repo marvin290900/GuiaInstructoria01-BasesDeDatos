@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->string('titulo');
             $table->year('año_publicacion');
             $table->foreignId('id_categoria')->constrained('Categorias');
+            $table->timestamps();
         });
     }
 

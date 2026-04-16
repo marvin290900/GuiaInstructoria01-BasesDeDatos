@@ -10,6 +10,5 @@ class DetallePrestamo extends Model
     use HasFactory;
 
     protected $table = 'Detalle_Prestamo';
-    public $timestamps = false;
     protected $fillable = ['id_prestamo', 'id_libro'];
 }

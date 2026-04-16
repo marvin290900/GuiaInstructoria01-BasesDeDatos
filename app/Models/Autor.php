@@ -10,7 +10,6 @@ class Autor extends Model
     use HasFactory;
 
     protected $table = 'Autores';
-    public $timestamps = false;
     protected $fillable = ['nombre'];
 
     public function libros()

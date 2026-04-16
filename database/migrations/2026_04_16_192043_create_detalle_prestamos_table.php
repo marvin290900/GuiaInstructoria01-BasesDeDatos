@@ -17,6 +17,7 @@ return new class extends Migration {
 
             $table->foreign('id_prestamo')->references('id')->on('Prestamos');
             $table->foreign('id_libro')->references('id')->on('Libros');
+            $table->timestamps();
         });
     }
 
