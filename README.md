@@ -61,3 +61,5 @@ The app will be available at: `http://localhost:8080`
 ```bash
 php artisan serve
 ```
+
+Al agregar un libro, se cambio el nombre en el campo de año_publicacion por anio_publicacion
